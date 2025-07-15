@@ -1,130 +1,168 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Französisch mit Laurence Bacmann</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
+      background-color: white;
       color: #333;
     }
-    header, footer {
-      background: #c62828;
+
+    /* French flag bar */
+    .flag-bar {
+      display: flex;
+      height: 8px;
+    }
+    .flag-bar div {
+      flex: 1;
+    }
+    .flag-blue { background-color: #0055A4; }
+    .flag-white { background-color: #fff; }
+    .flag-red { background-color: #EF4135; }
+
+    header {
+      background-color: #0055A4;
       color: white;
-      padding: 1rem 2rem;
+      padding: 20px;
       text-align: center;
     }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav {
+      background-color: #eee;
+      text-align: center;
+      padding: 10px;
+    }
+
     nav a {
       margin: 0 10px;
-      color: white;
+      color: #0055A4;
       text-decoration: none;
+      font-weight: bold;
     }
-    section {
-      padding: 2rem;
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
       max-width: 800px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 20px;
     }
-    h1, h2 {
-      color: #c62828;
+
+    section {
+      margin-bottom: 40px;
     }
+
+    h2 {
+      color: #0055A4;
+      border-bottom: 2px solid #EF4135;
+      padding-bottom: 5px;
+    }
+
     ul {
-      list-style: none;
-      padding: 0;
+      padding-left: 20px;
     }
-    ul li::before {
-      content: "\2713\0020";
-      color: #c62828;
+
+    .contact a {
+      color: #0055A4;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: #c62828;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    @media (max-width: 600px) {
-      section {
-        padding: 1rem;
-      }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
     }
   </style>
 </head>
 <body>
+
+  <div class="flag-bar">
+    <div class="flag-blue"></div>
+    <div class="flag-white"></div>
+    <div class="flag-red"></div>
+  </div>
+
   <header>
     <h1>Französisch mit Laurence Bacmann</h1>
-    <nav>
-      <a href="#about">Über mich</a>
-      <a href="#services">Angebot</a>
-      <a href="#approach">So arbeite ich</a>
-      <a href="#pricing">Preise</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
+    <p>Private Nachhilfe & Sprachcoaching – individuell, kompetent, sympathisch</p>
   </header>
 
-  <section>
-    <p>Willkommen! Ich bin Laurence Bacmann, französische Muttersprachlerin mit über 20 Jahren Erfahrung im Unterricht. Ich helfe Kindern, Jugendlichen und Erwachsenen, ihre Französischkenntnisse zu verbessern – individuell, geduldig und mit Freude am Lernen.</p>
-    <a href="#contact" class="button">Jetzt Kontakt aufnehmen</a>
-  </section>
+  <nav>
+    <a href="#about">Über mich</a>
+    <a href="#services">Angebot</a>
+    <a href="#method">Lernmethode</a>
+    <a href="#prices">Preise</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
 
-  <section id="about">
-    <h2>Über mich</h2>
-    <p>Ich wurde 1967 in Frankreich geboren, bin verheiratet und Mutter von zwei Söhnen. Ich habe in Frankreich Englisch auf Lehramt studiert und lebe seit 1995 in der Schweiz. Seit 2011 gebe ich Französischunterricht, seit 2020 intensiv und regelmäßig. Ich unterrichtete auch am Flicflac Zentrum und an der OBS in Pfäffikon.</p>
-  </section>
+  <main>
+    <section id="about">
+      <h2>Über mich</h2>
+      <p>Ich wurde 1967 in Frankreich geboren und bin Mutter zweier Söhne. Ich habe in Frankreich Englisch auf Lehramt studiert und lebe seit 1995 in der Schweiz. Seit 2011 gebe ich privaten Französischunterricht – seit 2020 regelmäßig. Ich war auch Lehrerin bei Flicflac und OBS Pfäffikon.</p>
+    </section>
 
-  <section id="services">
-    <h2>Angebot</h2>
-    <h3>Für Schüler:innen</h3>
-    <ul>
-      <li>Lernhilfe & Hausaufgabenbetreuung</li>
-      <li>Vorbereitung Kanti / Langzeitgymi</li>
-      <li>Maturavorbereitung</li>
-      <li>Konversation</li>
-    </ul>
-    <h3>Für Lernende & Erwachsene</h3>
-    <ul>
-      <li>DELF/DALF Vorbereitung</li>
-      <li>Französisch neu lernen oder auffrischen</li>
-      <li>Französische Konversation</li>
-    </ul>
-  </section>
+    <section id="services">
+      <h2>Angebot</h2>
+      <h3>Für Schüler:innen</h3>
+      <ul>
+        <li>Lernhilfe & Hausaufgabenbetreuung</li>
+        <li>Vorbereitung für Kanti und Langzeitgymi</li>
+        <li>Maturavorbereitung</li>
+        <li>Französisch Konversation</li>
+      </ul>
 
-  <section id="approach">
-    <h2>So arbeite ich</h2>
-    <ul>
-      <li>Ruhige, positive Lernatmosphäre</li>
-      <li>Individuell angepasst an deinen Wissensstand</li>
-      <li>Geduldige Unterstützung & verständliche Erklärungen</li>
-      <li>Grammatik auf Französisch, Deutsch oder Englisch</li>
-    </ul>
-  </section>
+      <h3>Für Lernende & Erwachsene</h3>
+      <ul>
+        <li>Vorbereitung auf DELF/DALF</li>
+        <li>Französisch auffrischen oder neu lernen</li>
+        <li>Französische Konversation</li>
+      </ul>
+    </section>
 
-  <section id="pricing">
-    <h2>Preise</h2>
-    <ul>
-      <li>Einzellektion (60 Min): CHF 70</li>
-      <li>45 Min: CHF 60 / 30 Min: CHF 50</li>
-      <li>Zweiergruppe (60 Min): CHF 50</li>
-      <li>Dreiergruppe (60 Min): CHF 40</li>
-    </ul>
-    <p>Absenzen bitte 24h im Voraus melden. Kurzfristige Absagen (mehr als 1x/Monat) werden verrechnet.</p>
-  </section>
+    <section id="method">
+      <h2>Lernmethode</h2>
+      <ul>
+        <li>Ruhige, unterstützende Lernatmosphäre</li>
+        <li>Individuelle Begleitung und Förderung</li>
+        <li>Anschauliche Erklärungen mit Freude und Geduld</li>
+        <li>Grammatik auf Französisch, Deutsch oder Englisch</li>
+      </ul>
+    </section>
 
-  <section id="contact">
-    <h2>Kontakt</h2>
-    <p><strong>Laurence Bacmann</strong></p>
-    <p><strong>Telefon:</strong> <a href="tel:+41797723625">079 772 36 25</a></p>
-    <p><strong>Email:</strong> <a href="mailto:lbacmann@gmail.com">lbacmann@gmail.com</a></p>
-  </section>
+    <section id="prices">
+      <h2>Preise</h2>
+      <ul>
+        <li>Einzellektion: CHF 70 (60 Min)</li>
+        <li>CHF 60 (45 Min) / CHF 50 (30 Min)</li>
+        <li>Zweiergruppe: CHF 50 (60 Min)</li>
+        <li>Dreiergruppe: CHF 40 (60 Min)</li>
+      </ul>
+      <p>Bitte Absenzen >24h im Voraus melden. Kurzfristige Absagen mehr als 1x pro Monat werden verrechnet.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Kontakt</h2>
+      <p><strong>Laurence Bacmann</strong></p>
+      <p><strong>Telefon / WhatsApp:</strong> <a href="tel:+41797723625">079 772 36 25</a></p>
+      <p><strong>Email:</strong> <a href="mailto:lbacmann@gmail.com">lbacmann@gmail.com</a></p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Laurence Bacmann – Französisch Nachhilfe</p>
+    &copy; 2025 Laurence Bacmann – Französisch Nachhilfe in der Schweiz 🇫🇷
   </footer>
+
 </body>
 </html>
+
