@@ -5,89 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Französisch mit Laurence Bacmann</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: white;
-      color: #333;
+    :root{
+      --blue:#0055A4;--red:#EF4135;--ink:#333;--muted:#6b7280;--bg:#ffffff;--card:#f9fafb
     }
-
-    /* French flag bar */
-    .flag-bar {
-      display: flex;
-      height: 8px;
-    }
-    .flag-bar div {
-      flex: 1;
-    }
-    .flag-blue { background-color: #002147; }
-    .flag-white { background-color: #fff; }
-    .flag-red { background-color: #EF4135; }
-
-    header {
-      background-color: #0055A4;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    nav {
-      background-color: #eee;
-      text-align: center;
-      padding: 10px;
-    }
-
-    nav a {
-      margin: 0 10px;
-      color: #0055A4;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      color: #0055A4;
-      border-bottom: 2px solid #EF4135;
-      padding-bottom: 5px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .contact a {
-      color: #0055A4;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #666;
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";margin:0;background:var(--bg);color:var(--ink);line-height:1.6}
+    .flag-bar{display:flex;height:8px}
+    .flag-bar div{flex:1}
+    .flag-blue{background:#002147}.flag-white{background:#fff}.flag-red{background:var(--red)}
+    header{background:linear-gradient(135deg,var(--blue),#0b6bd3);color:#fff;padding:48px 20px;text-align:center}
+    header h1{margin:0;font-size:clamp(28px,4vw,40px);letter-spacing:.2px}
+    header p{margin:.5rem 0 0;font-size:clamp(16px,2.2vw,18px);opacity:.95}
+    nav{position:sticky;top:0;background:#ffffffd9;backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #e5e7eb;z-index:10}
+    .nav-inner{max-width:980px;margin:0 auto;padding:10px 20px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center}
+    nav a{color:var(--blue);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px}
+    nav a:hover{background:#eef2ff;text-decoration:none}
+    main{max-width:980px;margin:0 auto;padding:28px 20px}
+    section{margin:36px 0;padding:24px;background:var(--card);border:1px solid #eef0f3;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.04)}
+    h2{color:var(--blue);border-bottom:2px solid var(--red);padding-bottom:6px;margin-top:0}
+    h3{margin-top:1rem;color:#0f172a}
+    ul{padding-left:20px;margin:0}
+    li+li{margin-top:.35rem}
+    .contact a{color:var(--blue);font-weight:600}
+    .price-list li{display:flex;justify-content:space-between;gap:10px}
+    .price{font-weight:700}
+    footer{text-align:center;padding:24px;color:var(--muted);font-size:.95em}
+    .badge{display:inline-block;background:#fff;border:1px solid #e5e7eb;color:#111827;padding:4px 10px;border-radius:999px;font-size:12px;margin-left:8px}
+    .note{font-size:.95em;color:#374151;background:#fff;border-left:3px solid var(--blue);padding:10px 12px;border-radius:8px;margin-top:12px}
+    @media (prefers-color-scheme: dark){
+      :root{--bg:#0b1220;--ink:#e5e7eb;--card:#0f1629}
+      nav{background:#0f1629d9;border-color:#1f2937}
+      section{border-color:#1f2937}
+      .note{background:#0b1220;color:#d1d5db}
     }
   </style>
 </head>
 <body>
-
-  <div class="flag-bar">
+  <div class="flag-bar" aria-hidden="true">
     <div class="flag-blue"></div>
     <div class="flag-white"></div>
     <div class="flag-red"></div>
@@ -99,76 +53,75 @@
   </header>
 
   <nav>
-    <a href="#about">Über mich</a>
-    <a href="#services">Angebot</a>
-    <a href="#method">Lernmethode</a>
-    <a href="#prices">Preise</a>
-    <a href="#contact">Kontakt</a>
+    <div class="nav-inner">
+      <a href="#about">Über mich</a>
+      <a href="#services">Angebot</a>
+      <!-- Lernmethode entfernt laut Update -->
+      <a href="#prices">Preise</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Kontakt</a>
+    </div>
   </nav>
 
   <main>
     <section id="about">
       <h2>Über mich</h2>
-      <p>Ich bin 1967 in Frankreich geboren und Mutter von zwei inzwischen erwachsenen Söhnen. In meiner Heimat habe ich Englisch auf Lehramt studiert, bevor ich 1995 in die Schweiz zog.
-
-Seit über zehn Jahren begleite ich mit viel Herzblut Kinder, Jugendliche und Erwachsene beim Französischlernen. Zuerst gelegentlich, seit 2020 mit voller Hingabe. Meine langjährige Erfahrung als Mutter, Nachhilfelehrerin und Lehrerin (u. a. im Flicflac Zentrum für Bildung und Coaching sowie an der OBS Pfäffikon) hilft mir, jede Schülerin und jeden Schüler individuell und geduldig zu fördern.
-
-Was mir besonders am Herzen liegt, ist das Lernen in einer vertrauensvollen, ruhigen und positiven Atmosphäre. Denn genau dort entsteht echte Freude am Lernen und damit nachhaltiger Erfolg.
-
-</p>
+      <p>Ich bin 1967 in Frankreich geboren und Mutter von zwei inzwischen erwachsenen Söhnen.<br>
+      In meiner Heimat habe ich Englisch auf Lehramt studiert, bevor ich 1995 in die Schweiz zog.<br>
+      Seit über zehn Jahren begleite ich mit viel Herzblut Kinder, Jugendliche und Erwachsene beim Französischlernen. Zuerst gelegentlich, seit 2020 mit voller Hingabe. Meine langjährige Erfahrung als Mutter, Nachhilfelehrerin und Lehrerin (u. a. im Flicflac Zentrum für Bildung und Coaching sowie an der OBS Pfäffikon) hilft mir, jede Schülerin und jeden Schüler individuell und geduldig zu fördern.<br>
+      Was mir besonders am Herzen liegt, ist das Lernen in einer vertrauensvollen, ruhigen und positiven Atmosphäre. Denn genau dort entsteht echte Freude am Lernen und damit nachhaltiger Erfolg.</p>
     </section>
 
     <section id="services">
-      <h2>Angebot</h2>
+      <h2>Angebot <span class="badge">aktualisiert</span></h2>
       <h3>Für Schüler:innen</h3>
       <ul>
         <li>Lernhilfe & Hausaufgabenbetreuung</li>
         <li>Vorbereitung für Kanti und Langzeitgymi</li>
         <li>Maturavorbereitung</li>
-        <li>Französisch Konversation</li>
+        <li>Konversation auf Französisch</li>
       </ul>
 
       <h3>Für Lernende & Erwachsene</h3>
       <ul>
         <li>Vorbereitung auf DELF/DALF</li>
         <li>Französisch auffrischen oder neu lernen</li>
-        <li>Französische Konversation</li>
-      </ul>
-    </section>
-
-    <section id="method">
-      <h2>Lernmethode</h2>
-      <ul>
-        <li>Ruhige, unterstützende Lernatmosphäre</li>
-        <li>Individuelle Begleitung und Förderung</li>
-        <li>Anschauliche Erklärungen mit Freude und Geduld</li>
-        <li>Grammatik auf Französisch, Deutsch oder Englisch</li>
+        <li>Konversation auf Französisch</li>
       </ul>
     </section>
 
     <section id="prices">
-      <h2>Preise</h2>
-      <ul>
-        <li>Einzellektion: CHF 70 (60 Min)</li>
-        <li>CHF 60 (45 Min) / CHF 50 (30 Min)</li>
-        <li>Zweiergruppe: CHF 50 (60 Min)</li>
-        <li>Dreiergruppe: CHF 40 (60 Min)</li>
+      <h2>Preise <span class="badge">aktualisiert</span></h2>
+      <ul class="price-list">
+        <li><span>Einzellektion</span> <span class="price">CHF 70 (60 Min)</span></li>
+        <li><span>Zweiergruppe</span> <span class="price">CHF 50 (60 Min)</span></li>
+        <li><span>Dreiergruppe</span> <span class="price">CHF 40 (60 Min)</span></li>
+        <li><span>Fahrspesen</span> <span class="price">CHF 0.76 pro Kilometer</span></li>
       </ul>
-      <p>Bitte Absenzen >24h im Voraus melden. Kurzfristige Absagen mehr als 1x pro Monat werden verrechnet.</p>
+      <!-- Absenzen-Hinweis und Kurzlektionen in FAQ verschoben -->
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <ul>
+        <li><strong>Einzelstunde (weniger als 60 Minuten pro Monat):</strong> CHF 80</li>
+        <li><strong>Kurze Lektionen:</strong> 45 Min à CHF 60 · 30 Min à CHF 50</li>
+        <li><strong>Absenzen:</strong> Bitte Absenzen &gt;24h im Voraus melden. Kurzfristige Absagen mehr als 1× pro Monat werden verrechnet.</li>
+        <li><strong>Unterrichtssprache Grammatik:</strong> Grammatik auf Französisch, Deutsch oder Englisch erklärt.</li>
+      </ul>
+      <p class="note">Hinweis: Für regelmässige wöchentliche Lektionen gelten die Preise im Abschnitt «Preise». Für unregelmässige Einzelstunden (weniger als 60 Minuten Unterricht pro Monat) gilt der FAQ-Tarif.</p>
     </section>
 
     <section id="contact" class="contact">
       <h2>Kontakt</h2>
       <p><strong>Laurence Bacmann</strong></p>
       <p><strong>Telefon / WhatsApp:</strong> <a href="tel:+41797723625">079 772 36 25</a></p>
-      <p><strong>Email:</strong> <a href="mailto:lbacmann@gmail.com">lbacmann@gmail.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:laurence.french.tutoring@gmail.com">laurence.french.tutoring@gmail.com</a></p>
     </section>
   </main>
 
   <footer>
     &copy; 2025 Laurence Bacmann – Französisch Nachhilfe in der Schweiz 🇫🇷
   </footer>
-
 </body>
 </html>
-
