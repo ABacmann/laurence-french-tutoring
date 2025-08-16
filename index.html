@@ -27,8 +27,30 @@
     ul{padding-left:20px;margin:0}
     li+li{margin-top:.35rem}
     .contact a{color:var(--blue);font-weight:600}
-    .price-list li{display:flex;justify-content:space-between;gap:10px}
-    .price{font-weight:700}
+
+    /* NEW: perfectly aligned CHF column */
+    .price-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .price-list li{
+      display:grid;
+      grid-template-columns: 1fr auto; /* left flexes, right fits content */
+      gap:12px;
+      padding:8px 0;
+      border-bottom:1px solid #e5e7eb;
+      align-items:center;
+    }
+    .price-list li:last-child{border-bottom:none}
+    .price-list .label{font-weight:500}
+    .price-list .price{
+      font-weight:700;
+      color:var(--blue);
+      text-align:right;
+      white-space:nowrap; /* keep CHF with amount */
+    }
+
     footer{text-align:center;padding:24px;color:var(--muted);font-size:.95em}
     .badge{display:inline-block;background:#fff;border:1px solid #e5e7eb;color:#111827;padding:4px 10px;border-radius:999px;font-size:12px;margin-left:8px}
     .note{font-size:.95em;color:#374151;background:#fff;border-left:3px solid var(--blue);padding:10px 12px;border-radius:8px;margin-top:12px}
@@ -68,7 +90,7 @@
       <h2>Über mich</h2>
       <p>Ich bin 1967 in Frankreich geboren und Mutter von zwei inzwischen erwachsenen Söhnen.<br>
       In meiner Heimat habe ich Englisch auf Lehramt studiert, bevor ich 1995 in die Schweiz zog.<br>
-      Seit über zehn Jahren begleite ich mit viel Herzblut Kinder, Jugendliche und Erwachsene beim Französischlernen. Zuerst gelegentlich, seit 2020 mit voller Hingabe. Meine langjährige Erfahrung als Mutter, Nachhilfelehrerin und Lehrerin (u. a. im Flicflac Zentrum für Bildung und Coaching sowie an der OBS Pfäffikon) hilft mir, jede Schülerin und jeden Schüler individuell und geduldig zu fördern.<br>
+      Seit über zehn Jahren begleite ich mit viel Herzblut Kinder, Jugendliche und Erwachsene beim Französischlernen. Zuerst gelegentlich, seit 2020 mit voller Hingabe. Meine langjährige Erfahrung als Mutter, Nachhilfelehrerin und Lehrerin (u. a. im Flicflac Zentrum für Bildung und Coaching sowie an der OBS Pfäffikon) hilft mir, jede Schülerin und jeden Schüler individuell und geduldig zu fördern.<br>
       Was mir besonders am Herzen liegt, ist das Lernen in einer vertrauensvollen, ruhigen und positiven Atmosphäre. Denn genau dort entsteht echte Freude am Lernen und damit nachhaltiger Erfolg.</p>
     </section>
 
@@ -93,23 +115,20 @@
     <section id="prices">
       <h2>Preise</h2>
       <ul class="price-list">
-        <li><span>Einzellektion</span> <span class="price">CHF 70 (60 Min)</span></li>
-        <li><span>Zweiergruppe</span> <span class="price">CHF 50 (60 Min)</span></li>
-        <li><span>Dreiergruppe</span> <span class="price">CHF 40 (60 Min)</span></li>
-        <li><span>Fahrspesen</span> <span class="price">CHF 0.76 pro Kilometer</span></li>
+        <li><span class="label">Einzellektion</span><span class="price">CHF 70 (60 Min)</span></li>
+        <li><span class="label">Zweiergruppe</span><span class="price">CHF 50 (60 Min)</span></li>
+        <li><span class="label">Dreiergruppe</span><span class="price">CHF 40 (60 Min)</span></li>
+        <li><span class="label">Fahrspesen</span><span class="price">CHF 0.76 pro Kilometer</span></li>
       </ul>
-      <!-- Absenzen-Hinweis und Kurzlektionen in FAQ verschoben -->
     </section>
 
     <section id="faq">
       <h2>FAQ</h2>
       <ul>
-        <li><strong>Einzelstunde (weniger als 60 Minuten pro Monat):</strong> CHF 80</li>
         <li><strong>Kurze Lektionen:</strong> 45 Min à CHF 60 · 30 Min à CHF 50</li>
         <li><strong>Absenzen:</strong> Bitte Absenzen &gt;24h im Voraus melden. Kurzfristige Absagen mehr als 1× pro Monat werden verrechnet.</li>
         <li><strong>Unterrichtssprache Grammatik:</strong> Grammatik auf Französisch, Deutsch oder Englisch erklärt.</li>
       </ul>
-      <p class="note">Hinweis: Für regelmässige wöchentliche Lektionen gelten die Preise im Abschnitt «Preise». Für unregelmässige Einzelstunden (weniger als 60 Minuten Unterricht pro Monat) gilt der FAQ-Tarif.</p>
     </section>
 
     <section id="contact" class="contact">
